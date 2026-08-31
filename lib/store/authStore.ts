@@ -1,0 +1,20 @@
+import { create } from "zustand";
+import { User } from "@/types/user";
+
+interface AuthStore {
+  user: User | null;
+  isAuthenticated: boolean;
+  setAuth: (user: User) => void;
+  clearAuth: () => void;
+}
+
+export const useAuth = create<AuthStore>()((set) => ({
+  user: null,
+  isAuthenticated: false,
+  setAuth: (user: User) => set({ user, isAuthenticated: true }),
+  clearAuth: () =>
+    set({
+      user: null,
+      isAuthenticated: false,
+    }),
+}));
