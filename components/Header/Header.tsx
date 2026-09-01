@@ -1,27 +1,26 @@
 "use client";
 
-import css from "./Header.module.css";
 import Link from "next/link";
-import { AuthNavigation } from "../AuthNavigation/AuthNavigation";
+import css from "./Header.module.css";
 
 export default function Header() {
   return (
     <header className={css.header}>
-      <Link href="/" aria-label="Home">
-        NoteHub
+      <Link href="/" aria-label="Home" className={css.logo}>
+        TravelTrucks
       </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" className={css.link}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/notes/filter/all">Notes</Link>
+            <Link href="/catalog" className={css.link}>
+              Catalog
+            </Link>
           </li>
-          <li>
-            <Link href="/sign-up">Register</Link>
-          </li>
-          <AuthNavigation />
         </ul>
       </nav>
     </header>
