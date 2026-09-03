@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/" aria-label="Home" className={css.logo}>
         TravelTrucks
       </Link>
-      <nav aria-label="Main Navigation">
+      <nav className={css.nav} aria-label="Main Navigation">
         <ul className={css.navigation}>
           <li>
             <Link href="/" className={css.link}>

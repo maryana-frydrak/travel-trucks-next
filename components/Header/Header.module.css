@@ -1,44 +1,60 @@
 .header {
   display: flex;
-  gap: 450px;
-  border-bottom: 1px solid var(--badges);
-  padding-block: 24px;
-  padding-inline: 64px;
-  width: 1440px;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
   height: 72px;
-  background-color: var(--inputs);
-}
-
-.headerLink {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
+  border-bottom: 1px solid var(--badges);
+  background-color: var(--white);
 }
 
 .headerLink:hover {
   color: #ddd;
 }
 
-.navigation {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 32px;
+.logo {
+  margin-right: auto;
+  text-decoration: none;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--main);
 }
 
-.navigationItem {
+.nav {
   display: flex;
   align-items: center;
 }
 
-.navigationLink {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
+.navigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navigationLink:hover {
-  color: #ddd;
+.link {
+  text-decoration: none;
+  color: var(--main);
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--grey-green);
+}
+
+.link.active {
+  color: var(--grey-green);
 }
