@@ -1,0 +1,22 @@
+.catalogPage {
+  padding: 48px 0 80px;
+  background-color: #f7f7f7;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  gap: 64px;
+}
+
+.filtersSection {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.contentSection {
+  flex-grow: 1;
+}

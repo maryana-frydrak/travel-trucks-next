@@ -7,7 +7,9 @@ export default function Header() {
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home" className={css.logo}>
-        TravelTrucks
+        <svg width="136" height="16">
+          <use href="/icons.svg#icon-logo"></use>
+        </svg>
       </Link>
       <nav className={css.nav} aria-label="Main Navigation">
         <ul className={css.navigation}>

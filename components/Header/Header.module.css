@@ -11,17 +11,8 @@
   background-color: var(--white);
 }
 
-.headerLink:hover {
-  color: #ddd;
-}
-
 .logo {
   margin-right: auto;
-  text-decoration: none;
-  font-family: var(--second-family);
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--main);
 }
 
 .nav {
