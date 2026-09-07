@@ -1,6 +1,33 @@
+"use client";
+
+import CamperList from "@/components/CamperList/CamperList";
 import css from "./page.module.css";
+import { useState } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { fetchCampers } from "@/lib/api/campers";
 
 export default function CatalogPage() {
+  const [filters, setFilters] = useState({});
+
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isLoading,
+    isError,
+  } = useInfiniteQuery({
+    queryKey: ["campers", filters],
+    queryFn: ({ pageParam }) => fetchCampers({ pageParam, filters }),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages) => {
+      const loadedCount = allPages.flatMap((page) => page.campers).length;
+      return loadedCount < lastPage.total ? allPages.length + 1 : undefined;
+    },
+  });
+
+  const campers = data?.pages.flatMap((page) => page.campers) || [];
+
   return (
     <main className={css.catalogPage}>
       <div className={css.container}>
@@ -173,7 +200,21 @@ export default function CatalogPage() {
         </aside>
 
         <section className={css.contentSection}>
-          <p>Camper list goes here</p>
+          {isLoading && <p>Loading campers...</p>}
+          {isError && <p>Failed to load data. Please try again.</p>}
+
+          {!isLoading && <CamperList campers={campers} />}
+
+          {hasNextPage && (
+            <button
+              type="button"
+              onClick={() => fetchNextPage()}
+              disabled={isFetchingNextPage}
+              style={{ marginTop: "20px", padding: "10px 20px" }}
+            >
+              {isFetchingNextPage ? "Loading..." : "Load more"}
+            </button>
+          )}
         </section>
       </div>
     </main>
