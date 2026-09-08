@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Camper } from "@/types/camper";
 import css from "./CamperCard.module.css";
+import { formatFeatureText } from "../../utils";
 
 interface CamperCardProps {
   camper: Camper;
@@ -22,29 +23,53 @@ export default function CamperCard({ camper }: CamperCardProps) {
           <h3 className={css.title}>{camper.name}</h3>
           <div className={css.priceWrapper}>
             <span className={css.price}>€{camper.price.toFixed(0)}</span>
-            <button
-              type="button"
-              className={css.favoriteBtn}
-              aria-label="Add to favorites"
-            >
-              {/* Іконка серця */}
-            </button>
           </div>
         </div>
 
         <div className={css.metaRow}>
           <span className={css.rating}>
-            ★ {camper.rating} ({camper.totalReviews} Reviews)
+            <svg width="16" height="16" className={css.ratingIcon}>
+              <use href="/icons.svg#icon-rating" />
+            </svg>
+            {camper.rating} ({camper.totalReviews} Reviews)
           </span>
-          <span className={css.location}>📍 {camper.location}</span>
+          <span className={css.location}>
+            <svg width="20" height="20" className={css.iconLocation}>
+              <use href="/icons.svg#icon-map"></use>
+            </svg>
+            {camper.location}
+          </span>
         </div>
 
         <p className={css.description}>{camper.description}</p>
 
         <ul className={css.badgeList}>
-          <li className={css.badge}>{camper.transmission}</li>
-          <li className={css.badge}>{camper.engine}</li>
-          <li className={css.badge}>{camper.form}</li>
+          <li className={css.badge}>
+            <svg width="20" height="20" className={css.badgeIcon}>
+              <use href="/icons.svg#icon-petrol" />
+            </svg>
+            <span className={css.badgeText}>
+              {formatFeatureText(camper.engine)}
+            </span>
+          </li>
+
+          <li className={css.badge}>
+            <svg width="20" height="20" className={css.badgeIcon}>
+              <use href="/icons.svg#icon-automatic" />
+            </svg>
+            <span className={css.badgeText}>
+              {formatFeatureText(camper.transmission)}
+            </span>
+          </li>
+
+          <li className={css.badge}>
+            <svg width="20" height="20" className={css.badgeIcon}>
+              <use href="/icons.svg#icon-alcove" />
+            </svg>
+            <span className={css.badgeText}>
+              {formatFeatureText(camper.form)}
+            </span>
+          </li>
         </ul>
 
         <Link

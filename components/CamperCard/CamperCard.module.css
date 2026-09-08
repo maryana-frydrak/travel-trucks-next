@@ -4,7 +4,6 @@
   padding: 24px;
 
   border-radius: 16px;
-  border: 1px solid (--badges);
   background-color: var(--inputs);
   margin-bottom: 32px;
   width: 888px;
@@ -42,6 +41,7 @@
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
+  margin: 0;
 
   line-height: 1.33;
   color: var(--main);
@@ -61,36 +61,47 @@
   color: var(--main);
 }
 
-.favoriteBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-}
-
 .metaRow {
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
-  font-size: 16px;
+}
+
+.ratingIcon {
+  margin-right: 4px;
+  fill: var(--rating);
 }
 
 .rating {
-  text-decoration: underline;
-  color: #101828;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.iconLocation {
+  margin-right: 4px;
+  vertical-align: -2px;
 }
 
 .location {
-  color: #101828;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
 }
 
 .description {
+  font-family: var(--font-family);
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #475467;
-  margin-bottom: 24px;
+  color: var(--text);
+  margin: 0 0 24px;
 
   white-space: nowrap;
   overflow: hidden;
@@ -107,31 +118,56 @@
 }
 
 .badge {
-  background-color: #f2f4f7;
-  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: 100px;
-  font-size: 14px;
+  padding-block: 12px;
+  padding-inline: 18px;
+  min-width: 109px;
+  height: 48px;
+
+  background: var(--badges);
+  mix-blend-mode: multiply;
+}
+
+.badgeIcon {
+  margin-right: 4px;
+  vertical-align: -2px;
+}
+
+.badgeText {
+  font-family: var(--font-family);
   font-weight: 500;
-  line-height: 1.28;
-  color: #101828;
+  font-size: 16px;
+
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
 }
 
 .detailsBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 40px;
-  background-color: #e44848;
-  color: #fff;
+
+  background-color: var(--grey-green);
   border-radius: 200px;
-  font-size: 16px;
+  padding: 16px 60px;
+
+  font-family: var(--font-family);
   font-weight: 500;
+  font-size: 16px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
   text-decoration: none;
   width: fit-content;
   transition: background-color 0.3s ease;
 }
 
-.detailsBtn:hover {
-  background-color: #d84343;
+.detailsBtn:hover,
+.detailsBtn:focus {
+  background-color: var(--green-hover);
 }
