@@ -1,10 +1,18 @@
 import css from "./Loader.module.css";
-import { PacmanLoader } from "react-spinners";
 
 export default function Loader() {
   return (
     <div className={css.backdrop}>
-      <PacmanLoader color="#49dab8" />
+      <div className={css.loaderCard}>
+        <svg className={css.svgSpinner} width="72" height="72">
+          <use href="/icons.svg#icon-spiner" />
+        </svg>
+
+        <h3 className={css.loaderTitle}>Loading trucks...</h3>
+        <p className={css.loaderText}>
+          Please wait while we fetch the best <br /> travel trucks for you
+        </p>
+      </div>
     </div>
   );
 }
