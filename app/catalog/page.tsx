@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchCampers } from "@/lib/api/campers";
 import Loader from "@/components/Loader/Loader";
+import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 
 export default function CatalogPage() {
   const [filters, setFilters] = useState({});
@@ -234,9 +235,23 @@ export default function CatalogPage() {
 
         <section className={css.contentSection}>
           {isLoading && <Loader />}
-          {isError && <p>Failed to load data. Please try again.</p>}
+          {isError && (
+            <ErrorMessage
+              onClearFilters={handleClear}
+              onViewAll={handleClear}
+            />
+          )}
 
-          {!isLoading && <CamperList campers={campers} />}
+          {!isLoading && !isError && campers.length === 0 && (
+            <ErrorMessage
+              onClearFilters={handleClear}
+              onViewAll={handleClear}
+            />
+          )}
+
+          {!isLoading && !isError && campers.length > 0 && (
+            <CamperList campers={campers} />
+          )}
 
           {hasNextPage && (
             <button

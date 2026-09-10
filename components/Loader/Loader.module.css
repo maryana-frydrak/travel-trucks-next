@@ -41,7 +41,6 @@
 }
 
 .loaderTitle {
-  font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
 
@@ -52,7 +51,6 @@
 }
 
 .loaderText {
-  font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
 

@@ -18,6 +18,16 @@
   padding: 0 64px;
 }
 
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 32px;
+}
+
 .content {
   max-width: 571px;
   display: flex;
@@ -26,7 +36,6 @@
 }
 
 .title {
-  font-family: var(--font-family);
   font-weight: 600;
   font-size: 48px;
 
@@ -35,8 +44,13 @@
   margin-bottom: 16px;
 }
 
+.notFoundTitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .subtitle {
-  font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
 
@@ -54,7 +68,7 @@
   padding-inline: 60px;
   width: 173px;
   height: 56px;
-  font-family: var(--font-family);
+
   font-weight: 500;
   font-size: 16px;
 

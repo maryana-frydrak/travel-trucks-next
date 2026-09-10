@@ -27,3 +27,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+button {
+  cursor: pointer;
+  font-family: inherit; 
+  border: none;
+  background: transparent;
+  padding: 0;
+}

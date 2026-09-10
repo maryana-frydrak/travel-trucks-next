@@ -1,15 +1,112 @@
-.errorWrapper {
-  background-color: #fff2f0; /* Легкий червоний фон */
-  border: 1px solid #ffccc7;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 20px auto;
-  max-width: 400px;
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin: 0 auto;
+
+  border-radius: 16px;
+  padding: 24px;
+  width: 888px;
+  height: 840px;
+
+  background: var(--inputs);
+}
+
+.imageWrapper {
+  width: 488px;
+  height: 463px;
+  margin-bottom: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.errorTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33;
+  text-align: center;
+  color: var(--main);
+  margin-bottom: 16px;
 }
 
 .errorText {
-  color: #ff4d4f; /* Яскравий червоний для помилки */
-  margin: 0;
+  font-family: var(--font-family);
   font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
+  margin-bottom: 43px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding-block: 16px;
+  padding-inline: 32px;
+  width: 192px;
+  height: 56px;
+
+  background-color: var(--white);
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--main);
+}
+
+.clearBtn:hover,
+.clearBtn:focus {
+  border-color: var(--green-hover);
+}
+
+.viewAllBtn {
+  border-radius: 200px;
+  padding-block: 16px;
+  padding-inline: 32px;
+  width: 192px;
+  height: 56px;
+
+  background-color: var(--grey-green);
+
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background-color 0.2s;
+}
+
+.viewAllBtn:hover,
+.viewAllBtn:focus {
+  background-color: var(--green-hover);
 }
