@@ -11,3 +11,8 @@ export async function fetchCampers({ pageParam = 1, filters = {} }) {
   });
   return response.data;
 }
+
+export async function fetchCamperById(id: string) {
+  const response = await campersApi.get(`/campers/${id}`);
+  return response.data;
+}
