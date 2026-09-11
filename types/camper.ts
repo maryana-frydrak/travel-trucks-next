@@ -4,7 +4,7 @@ export interface Camper {
   price: number;
   rating: number;
   location: string;
-  description?: string; // робимо опціональним, якщо в GET /campers його немає в списку, але воно є на деталях
+  description?: string;
   form: string;
   length: string;
   width: string;

@@ -24,7 +24,7 @@ export default function CamperGallery({ gallery }: CamperGalleryProps) {
 
   return (
     <div className={css.galleryContainer}>
-      {/* Головний слайдер */}
+      
       <Swiper
         modules={[FreeMode, Thumbs]}
         thumbs={{
@@ -43,7 +43,6 @@ export default function CamperGallery({ gallery }: CamperGalleryProps) {
         ))}
       </Swiper>
 
-      {/* Слайдер мініатюр */}
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}

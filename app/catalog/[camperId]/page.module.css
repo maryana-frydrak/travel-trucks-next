@@ -1,0 +1,31 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px;
+}
+
+.columnsWrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.leftColumn {
+  width: 638px;
+  flex-shrink: 0;
+}
+
+.rightColumn {
+  width: 650px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainInfoCard,
+.detailsCard {
+  background-color: var(--inputs);
+  border-radius: 16px;
+  padding: 24px;
+}

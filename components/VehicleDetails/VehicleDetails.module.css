@@ -1,0 +1,67 @@
+.detailsContainer {
+  margin-top: 44px;
+  width: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.badgeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.badge {
+  background-color: #f2f4f7;
+  padding: 12px 18px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #dadde1;
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+}
