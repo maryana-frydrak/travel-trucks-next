@@ -34,28 +34,28 @@ export default function VehicleDetails({ camper }: VehicleDetailsProps) {
 
       <ul className={css.list}>
         <li className={css.item}>
-          <span>Form</span>
-          <span>{camper.form}</span>
+          <span className={css.label}>Form</span>
+          <span className={css.value}>{camper.form}</span>
         </li>
         <li className={css.item}>
-          <span>Length</span>
-          <span>{camper.length}</span>
+          <span className={css.label}>Length</span>
+          <span className={css.value}>{camper.length}</span>
         </li>
         <li className={css.item}>
-          <span>Width</span>
-          <span>{camper.width}</span>
+          <span className={css.label}>Width</span>
+          <span className={css.value}>{camper.width}</span>
         </li>
         <li className={css.item}>
-          <span>Height</span>
-          <span>{camper.height}</span>
+          <span className={css.label}>Height</span>
+          <span className={css.value}>{camper.height}</span>
         </li>
         <li className={css.item}>
-          <span>Tank</span>
-          <span>{camper.tank}</span>
+          <span className={css.label}>Tank</span>
+          <span className={css.value}>{camper.tank}</span>
         </li>
         <li className={css.item}>
-          <span>Consumption</span>
-          <span>{camper.consumption}</span>
+          <span className={css.label}>Consumption</span>
+          <span className={css.value}>{camper.consumption}</span>
         </li>
       </ul>
     </div>

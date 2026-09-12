@@ -1,0 +1,89 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 623px;
+  height: auto;
+
+  background-color: var(--inputs);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33;
+  color: var(--grey-green);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.starActive {
+  fill: var(--rating);
+}
+
+.starInactive {
+  fill: var(--gray-light);
+}
+
+.comment {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.noReviews {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--text);
+}

@@ -1,3 +1,9 @@
+export interface Review {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+}
+
 export interface Camper {
   id: string;
   name: string;
@@ -16,6 +22,7 @@ export interface Camper {
   amenities: string[];
   coverImage: string;
   totalReviews: number;
+  reviws: Review[];
 }
 
 export interface CampersResponse {

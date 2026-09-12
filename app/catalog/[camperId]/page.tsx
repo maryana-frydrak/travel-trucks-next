@@ -1,7 +1,9 @@
-import { fetchCamperById } from "@/lib/api/campers";
+import { fetchCamperById, fetchCamperReviews } from "@/lib/api/campers";
 import CamperGallery from "@/components/CamperGallery/CamperGallery";
 import css from "./page.module.css";
 import VehicleDetails from "@/components/VehicleDetails/VehicleDetails";
+import CamperReviews from "@/components/CamperReviews/CamperReviews";
+import BookingForm from "@/components/BookingForm/BookingForm";
 
 interface CamperDetailsPageProps {
   params: Promise<{
@@ -13,7 +15,11 @@ export default async function CamperDetailsPage({
   params,
 }: CamperDetailsPageProps) {
   const { camperId } = await params;
-  const camper = await fetchCamperById(camperId);
+
+  const [camper, reviews] = await Promise.all([
+    fetchCamperById(camperId),
+    fetchCamperReviews(camperId),
+  ]);
 
   return (
     <main className={css.container}>
@@ -47,6 +53,18 @@ export default async function CamperDetailsPage({
           </div>
           <div className={css.detailsCard}>
             <VehicleDetails camper={camper} />
+          </div>
+        </div>
+      </div>
+
+      <div className={css.bottomSection}>
+        <h2 className={css.reviewsTitle}>Reviews</h2>
+        <div className={css.columnRow}>
+          <div className={css.reviewsColumn}>
+            <CamperReviews reviews={reviews} />
+          </div>
+          <div className={css.formColumn}>
+            <BookingForm camperId={camperId} />
           </div>
         </div>
       </div>
